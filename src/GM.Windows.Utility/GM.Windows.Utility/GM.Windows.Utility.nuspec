@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/GregaMohorko/GM.Windows.Utility/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/GregaMohorko/GM.Windows.Utility</projectUrl>
+    <iconUrl>https://mohorko.info/favicon.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <summary>$description$</summary>
+    <copyright>$copyright$</copyright>
+    <tags>utility windows extensions</tags>
+  </metadata>
+</package>
