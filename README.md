@@ -7,8 +7,8 @@
 ## List of classes
 
 **Utilities (static classes)**:
-- [Process](src/GM.Utility/GM.Utility/ProcessUtility.cs)
-- [Window](src/GM.Utility/GM.Utility/WindowUtility.cs)
+- [Process](src/GM.Windows.Utility/GM.Windows.Utility/ProcessUtility.cs)
+- [Window](src/GM.Windows.Utility/GM.Windows.Utility/WindowUtility.cs)
 
 ## Requirements
 .NET Framework 4.6.1
