@@ -11,8 +11,8 @@
     <iconUrl>https://mohorko.info/favicon.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <summary>$description$</summary>
     <copyright>$copyright$</copyright>
     <tags>utility windows extensions</tags>
+	<releaseNotes>Added CryptographyUtility. Improved WindowUtility.ShowDialog.</releaseNotes>
   </metadata>
 </package>
