@@ -11,6 +11,7 @@
 ## List of classes
 
 **Utilities (static classes)**:
+- [Cryptography](src/GM.Windows.Utility/GM.Windows.Utility/CryptographyUtility.cs)
 - [Process](src/GM.Windows.Utility/GM.Windows.Utility/ProcessUtility.cs)
 - [Window](src/GM.Windows.Utility/GM.Windows.Utility/WindowUtility.cs)
 
