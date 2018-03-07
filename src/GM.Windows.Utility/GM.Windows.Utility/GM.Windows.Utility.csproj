@@ -58,8 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CryptographyUtility.cs" />
+    <Compile Include="DispatcherUtility.cs" />
     <Compile Include="ProcessUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThreadUtility.cs" />
     <Compile Include="WindowUtility.cs" />
   </ItemGroup>
   <ItemGroup>
