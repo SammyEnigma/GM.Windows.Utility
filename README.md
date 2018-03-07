@@ -14,7 +14,9 @@
 
 **Utilities (static classes)**:
 - [Cryptography](src/GM.Windows.Utility/GM.Windows.Utility/CryptographyUtility.cs)
+- [Dispatcher](src/GM.Windows.Utility/GM.Windows.Utility/DispatcherUtility.cs)
 - [Process](src/GM.Windows.Utility/GM.Windows.Utility/ProcessUtility.cs)
+- [Thread](src/GM.Windows.Utility/GM.Windows.Utility/ThreadUtility.cs)
 - [Window](src/GM.Windows.Utility/GM.Windows.Utility/WindowUtility.cs)
 
 ## Requirements
