@@ -13,6 +13,7 @@
     <description>$description$</description>
     <copyright>$copyright$</copyright>
     <tags>utility windows extensions</tags>
-	<releaseNotes>Added CryptographyUtility. Improved WindowUtility.ShowDialog.</releaseNotes>
+	<releaseNotes>Added DispatcherUtility.
+Added ThreadUtility.</releaseNotes>
   </metadata>
 </package>
