@@ -13,7 +13,6 @@
     <description>$description$</description>
     <copyright>$copyright$</copyright>
     <tags>utility windows extensions</tags>
-	<releaseNotes>Added DispatcherUtility.
-Added ThreadUtility.</releaseNotes>
+	<releaseNotes>Added VisualStudioUtility.</releaseNotes>
   </metadata>
 </package>
