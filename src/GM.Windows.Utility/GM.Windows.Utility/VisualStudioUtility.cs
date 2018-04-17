@@ -84,8 +84,8 @@ namespace GM.Windows.Utility
 		/// <para>If the package parameter is not provided, this method basically adds a blank line at the end of the project file. The Visual Studio will pick up this change and ask the user to reload.</para>
 		/// </summary>
 		/// <param name="projectFilePath">The project file.</param>
-		/// <param name="package">If this method is being called inside a Visual Studio extension, you can provide your package to get the currently opened solution and refresh intellisense more cleanly.</param>
-		public static void RefreshIntellisense(string projectFilePath, IServiceProvider package=null)
+		/// <param name="package">If this method is being called inside a Visual Studio extension, you can provide your package to get the currently opened solution and refresh intellisense more naturally.</param>
+		public static void RefreshIntellisense(string projectFilePath, IServiceProvider package = null)
 		{
 			// https://stackoverflow.com/a/45694174/6277755
 			if(package != null) {
