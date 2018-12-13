@@ -13,6 +13,7 @@
 ## List of classes
 
 **Utilities (static classes)**:
+- [Clipboard](src/GM.Windows.Utility/GM.Windows.Utility/ClipboardUtility.cs)
 - [Cryptography](src/GM.Windows.Utility/GM.Windows.Utility/CryptographyUtility.cs)
 - [Dispatcher](src/GM.Windows.Utility/GM.Windows.Utility/DispatcherUtility.cs)
 - [Process](src/GM.Windows.Utility/GM.Windows.Utility/ProcessUtility.cs)
