@@ -13,6 +13,6 @@
     <description>$description$</description>
     <copyright>$copyright$</copyright>
     <tags>utility windows extensions</tags>
-	<releaseNotes>Added VisualStudioUtility.</releaseNotes>
+	<releaseNotes>Added ClipboardUtility, ReflectionUtility, VisualStudioUtility.RefreshIntellisense.</releaseNotes>
   </metadata>
 </package>
