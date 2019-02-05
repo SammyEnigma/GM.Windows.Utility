@@ -18,6 +18,7 @@
 - [Dispatcher](src/GM.Windows.Utility/GM.Windows.Utility/DispatcherUtility.cs)
 - [Process](src/GM.Windows.Utility/GM.Windows.Utility/ProcessUtility.cs)
 - [Reflection](src/GM.Windows.Utility/GM.Windows.Utility/ReflectionUtility.cs)
+- [Style](src/GM.Windows.Utility/GM.Windows.Utility/StyleUtility.cs)
 - [Thread](src/GM.Windows.Utility/GM.Windows.Utility/ThreadUtility.cs)
 - [VisualStudio](src/GM.Windows.Utility/GM.Windows.Utility/VisualStudioUtility.cs)
 - [Window](src/GM.Windows.Utility/GM.Windows.Utility/WindowUtility.cs)
