@@ -47,18 +47,18 @@ namespace GM.Windows.Utility
 		/// </summary>
 		/// <typeparam name="T">The type of the window.</typeparam>
 		/// <param name="constructorParameters">An array of arguments that match in number, order and type of the parameters of the window constructor to invoke. Leave empty to use the default parameterless constructor.</param>
-		public static void ShowDialog<T>(params object[] constructorParameters) where T:Window
+		public static void ShowDialog<T>(params object[] constructorParameters) where T : Window
 		{
 			// the action that will show the window
-			Action showWindow = delegate ()
+			void showWindow()
 			{
 				var messageWindow = (T)Activator.CreateInstance(typeof(T), constructorParameters);
 				messageWindow.ShowDialog();
-			};
+			}
 
 			if(Thread.CurrentThread.GetApartmentState() == ApartmentState.STA) {
 				// show the window on the current thread
-				showWindow.Invoke();
+				showWindow();
 			} else {
 				// The calling thread must be STA, because many UI components require this.
 				var windowThread = new Thread(new ThreadStart(showWindow));

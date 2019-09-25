@@ -1,7 +1,7 @@
 ﻿/*
 MIT License
 
-Copyright (c) 2018 Grega Mohorko
+Copyright (c) 2019 Grega Mohorko
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -48,8 +48,10 @@ namespace GM.Windows.Utility
 		/// <typeparam name="T">The type of the dispatcher object.</typeparam>
 		/// <param name="dispatcherObject">The object that is associated with a dispatcher on which to invoke the action.</param>
 		/// <param name="callback">A delegate to invoke through the dispatcher.</param>
+		[Obsolete("Calling this method is not needed, because invoking on the same thread that the dispatcher is associated with is not a problem. Simply use the default Invoke method of the dispatcherObject.Dispatcher.", false)]
 		public static void InvokeOnMyThread<T>(this T dispatcherObject, Action callback) where T : DispatcherObject
 		{
+			// FIXME obsolete 2019-09-25
 			Dispatcher dispatcher = dispatcherObject.Dispatcher;
 			if(DispatcherUtility.IsCurrentlyRunning(dispatcher)) {
 				callback();
