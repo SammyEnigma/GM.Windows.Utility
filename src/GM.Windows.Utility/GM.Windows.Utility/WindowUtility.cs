@@ -1,7 +1,7 @@
 ﻿/*
 MIT License
 
-Copyright (c) 2018 Grega Mohorko
+Copyright (c) 2019 Grega Mohorko
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -53,7 +53,7 @@ namespace GM.Windows.Utility
 			void showWindow()
 			{
 				var messageWindow = (T)Activator.CreateInstance(typeof(T), constructorParameters);
-				messageWindow.ShowDialog();
+				_ = messageWindow.ShowDialog();
 			}
 
 			if(Thread.CurrentThread.GetApartmentState() == ApartmentState.STA) {

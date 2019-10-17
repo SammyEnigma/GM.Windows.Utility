@@ -1,7 +1,7 @@
 ﻿/*
 MIT License
 
-Copyright (c) 2018 Grega Mohorko
+Copyright (c) 2019 Grega Mohorko
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -68,6 +68,19 @@ namespace GM.Windows.Utility
 			}
 
 			return CsvUtility.Parse(clipboardString).ToList();
+		}
+
+		/// <summary>
+		/// Stores text data on the Clipboard.
+		/// <para>Use this method instead of <see cref="Clipboard.SetText(string)"/> because this method handles the case where the system clipboard is blocked by another process. Unfortunately, the are many snipping tools, programs for screenshots and file copy tools which can block the Windows clipboard. So you will get the exception every time you try to use <see cref="Clipboard.SetText(string)"/> when such a tool is installed on your PC. Check the link below.</para>
+		/// <para>https://stackoverflow.com/a/39125098/6277755</para>
+		/// </summary>
+		/// <param name="text">A string that contains the text data to store on the Clipboard.</param>
+		/// <param name="copy">True to leave the data on the system Clipboard when the application exits; False to clear the data from the system Clipboard when the application exits.</param>
+		public static void SetText(string text, bool copy = false)
+		{
+			// https://stackoverflow.com/questions/68666/clipbrd-e-cant-open-error-when-setting-the-clipboard-from-net
+			Clipboard.SetDataObject(text, copy);
 		}
 	}
 }
