@@ -1,7 +1,7 @@
 ﻿/*
 MIT License
 
-Copyright (c) 2019 Grega Mohorko
+Copyright (c) 2019 Gregor Mohorko
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +23,14 @@ SOFTWARE.
 
 Project: GM.Windows.Utility
 Created: 2018-12-13
-Author: GregaMohorko
+Author: Gregor Mohorko
 */
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -80,7 +82,18 @@ namespace GM.Windows.Utility
 		public static void SetText(string text, bool copy = false)
 		{
 			// https://stackoverflow.com/questions/68666/clipbrd-e-cant-open-error-when-setting-the-clipboard-from-net
-			Clipboard.SetDataObject(text, copy);
+			try {
+				Clipboard.SetDataObject(text, copy);
+			} catch(TargetInvocationException e) {
+				// https://github.com/ColinDabritz/PoeItemAnalyzer/issues/1#issuecomment-228500222
+				if(e.InnerException is COMException innerE) {
+					const int CLIPBRD_E_CANT_OPEN = -2147221040;
+					if(innerE.ErrorCode == CLIPBRD_E_CANT_OPEN) {
+						return;
+					}
+				}
+				throw;
+			}
 		}
 	}
 }
