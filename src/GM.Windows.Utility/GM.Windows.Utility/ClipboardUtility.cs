@@ -1,7 +1,7 @@
 ﻿/*
 MIT License
 
-Copyright (c) 2019 Gregor Mohorko
+Copyright (c) 2020 Gregor Mohorko
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -82,17 +82,28 @@ namespace GM.Windows.Utility
 		public static void SetText(string text, bool copy = false)
 		{
 			// https://stackoverflow.com/questions/68666/clipbrd-e-cant-open-error-when-setting-the-clipboard-from-net
+
+			bool ShouldIgnore(COMException comEx)
+			{
+				// https://github.com/ColinDabritz/PoeItemAnalyzer/issues/1#issuecomment-228500222
+				const int CLIPBRD_E_CANT_OPEN = -2147221040;
+				return comEx.ErrorCode == CLIPBRD_E_CANT_OPEN;
+			}
+
 			try {
 				Clipboard.SetDataObject(text, copy);
 			} catch(TargetInvocationException e) {
-				// https://github.com/ColinDabritz/PoeItemAnalyzer/issues/1#issuecomment-228500222
-				if(e.InnerException is COMException innerE) {
-					const int CLIPBRD_E_CANT_OPEN = -2147221040;
-					if(innerE.ErrorCode == CLIPBRD_E_CANT_OPEN) {
-						return;
+				if(e.InnerException is COMException innerComEx) {
+					if(!ShouldIgnore(innerComEx)) {
+						throw;
 					}
+				} else {
+					throw;
 				}
-				throw;
+			} catch(COMException e) {
+				if(!ShouldIgnore(e)) {
+					throw;
+				}
 			}
 		}
 	}
