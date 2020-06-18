@@ -1,7 +1,7 @@
 ﻿/*
 MIT License
 
-Copyright (c) 2019 Grega Mohorko
+Copyright (c) 2020 Gregor Mohorko
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -23,7 +23,7 @@ SOFTWARE.
 
 Project: GM.Windows.Utility
 Created: 2019-2-5
-Author: GregaMohorko
+Author: Gregor Mohorko
 */
 
 using System;
@@ -48,6 +48,17 @@ namespace GM.Windows.Utility
 		public static Style AddToolTip(this Style style, string toolTipText)
 		{
 			var newStyle = new Style(style.TargetType, style);
+			newStyle.Setters.Add(new Setter(FrameworkElement.ToolTipProperty, toolTipText));
+			return newStyle;
+		}
+
+		/// <summary>
+		/// Creates and returns a new style that has the specified tool tip text setter.
+		/// </summary>
+		/// <param name="toolTipText">The tool tip text to set.</param>
+		public static Style CreateWithToolTip(string toolTipText)
+		{
+			var newStyle = new Style();
 			newStyle.Setters.Add(new Setter(FrameworkElement.ToolTipProperty, toolTipText));
 			return newStyle;
 		}

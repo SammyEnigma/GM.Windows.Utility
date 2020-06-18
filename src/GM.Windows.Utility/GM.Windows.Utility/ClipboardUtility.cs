@@ -62,6 +62,10 @@ namespace GM.Windows.Utility
 				string[] formats = dataObject.GetFormats();
 				if(formats.Contains(DataFormats.CommaSeparatedValue)) {
 					clipboardString = (string)dataObject.GetData(DataFormats.CommaSeparatedValue);
+				} else if(formats.Contains(DataFormats.StringFormat)) {
+					clipboardString = (string)dataObject.GetData(DataFormats.StringFormat);
+				} else if(formats.Contains(DataFormats.UnicodeText)) {
+					clipboardString = (string)dataObject.GetData(DataFormats.UnicodeText);
 				} else if(formats.Contains(DataFormats.Text)) {
 					clipboardString = (string)dataObject.GetData(DataFormats.Text);
 				} else {
