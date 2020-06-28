@@ -24,11 +24,11 @@
 - [Window](src/GM.Windows.Utility/GM.Windows.Utility/WindowUtility.cs)
 
 ## Requirements
-.NET Framework 4.6.1
+.NET Framework 4.7.1
 
 ## Author and License
-Grega Mohorko ([www.mohorko.info](https://www.mohorko.info))
+Gregor Mohorko ([www.mohorko.info](https://www.mohorko.info))
 
-Copyright (c) 2018 Grega Mohorko
+Copyright (c) 2020 Gregor Mohorko
 
-[MIT License](./LICENSE)
+[MIT License](./LICENSE.md)
